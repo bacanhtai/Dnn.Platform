@@ -228,7 +228,7 @@
     
     <div id="dnnModuleDigitalAssetsGetUrlModal" style="display: none;">
         <br />
-        <span><%=LocalizeString("GetFileUrlLabel") %></span>
+        <span><%=LocalizeString("GetUrlLabel") %></span>
         <input type="text" readonly="readonly" onclick="this.select()" title="<%=LocalizeString("GetUrlAltText") %>" />
     </div>
     <dnnweb:DnnFileUpload ID="fileUpload" runat="server"/>
@@ -280,6 +280,10 @@
         {
             saveText: '<%= Localization.GetSafeJSString(LocalizeString("Save")) %>',
             cancelText: '<%= Localization.GetSafeJSString(LocalizeString("Cancel")) %>',
+            fileLabel: '<%= Localization.GetSafeJSString(LocalizeString("FileLabel")) %>',
+            folderLabel: '<%= Localization.GetSafeJSString(LocalizeString("FolderLabel")) %>',
+            fileMultLabel: '<%= Localization.GetSafeJSString(LocalizeString("FileMultLabel")) %>',
+            folderMultLabel: '<%= Localization.GetSafeJSString(LocalizeString("FolderMultLabel")) %>',
             createNewFolderTitleText: '<%= Localization.GetSafeJSString(LocalizeString("CreateNewFolderTitle")) %>',
             loadingAltText: '<%= Localization.GetSafeJSString(LocalizeString("Loading")) %>',
             uploadErrorText: '<%= Localization.GetSafeJSString(LocalizeString("UploadError")) %>',
@@ -333,7 +337,8 @@
             invalidCharsErrorText: '<%= Localization.GetSafeJSString(InvalidCharactersErrorText) %>',
             getUrlTitle: '<%= Localization.GetSafeJSString(LocalizeString("GetUrl.Title")) %>',
             getUrlErrorTitle: '<%= Localization.GetSafeJSString(LocalizeString("GetUrlError.Title")) %>',
-            getFileUrlLabel: '<%= Localization.GetSafeJSString(LocalizeString("GetFileUrlLabel.Text")) %>',            
+            getUrlLabel: '<%= Localization.GetSafeJSString(LocalizeString("GetUrlLabel.Text")) %>',            
+            getFileUrlTitle: '<%= Localization.GetSafeJSString(LocalizeString("GetFileUrl.Title")) %>',     
             searchBreadcrumb: '<%= Localization.GetSafeJSString(LocalizeString("SearchBreadcrumb.Text")) %>',
             moving: '<%= Localization.GetSafeJSString(LocalizeString("Moving.Text")) %>',
             selectAll: '<%= Localization.GetSafeJSString(LocalizeString("SelectAll.Text")) %>',

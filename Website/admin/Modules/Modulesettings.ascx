@@ -89,6 +89,10 @@
 						Display="Dynamic" resourcekey="valEndDate2.ErrorMessage" CompareControl="startDatePicker"
                         CssClass="dnnFormMessage dnnFormError"></asp:CustomValidator>
 				</div>
+                <div class="dnnFormItem">
+                    <dnn:label id="plMoniker" runat="server" controlname="txtMoniker" />
+                    <asp:TextBox ID="txtMoniker" runat="server" MaxLength="100" />
+                </div>
             </fieldset>
             <h2 id="dnnPanel-ModuleAdditionalPages" class="dnnFormSectionHead">
                 <a href="" class="dnnSectionExpanded">
@@ -313,7 +317,8 @@
                 noSelectionMessage: '<%= Localization.GetSafeJSString("PreviewNoSelectionMessage.Text") %>',
                 alertCloseText: '<%= Localization.GetSafeJSString("Close.Text", Localization.SharedResourceFile)%>',
                 alertOkText: '<%= Localization.GetSafeJSString("Ok.Text", Localization.SharedResourceFile)%>',
-                useComboBox: true
+                useComboBox: true,
+                ModuleId: '<%= ModuleId %>'
             });
 
             toggleShareableRowViewOnly(false);

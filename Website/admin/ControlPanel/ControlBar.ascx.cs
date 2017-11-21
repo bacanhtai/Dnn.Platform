@@ -48,6 +48,7 @@ using DotNetNuke.Web.Client.ClientResourceManagement;
 using DotNetNuke.Web.Common;
 using DotNetNuke.Web.UI.WebControls;
 using DotNetNuke.Services.Personalization;
+using DotNetNuke.Web.Client;
 using DotNetNuke.Web.Components.Controllers;
 using DotNetNuke.Web.Components.Controllers.Models;
 using Globals = DotNetNuke.Common.Globals;
@@ -125,12 +126,6 @@ namespace DotNetNuke.UI.ControlPanels
             {
                 ID = "ControlBar";
 
-                var gettingStarted = DnnGettingStarted.GetCurrent(Page);
-                if (gettingStarted == null)
-                {
-                    gettingStarted = new DnnGettingStarted();
-                    Page.Form.Controls.Add(gettingStarted);
-                }
                 FileUploader = new DnnFileUpload {ID = "fileUploader", SupportHost = false};
                 Page.Form.Controls.Add(FileUploader);
 
@@ -155,7 +150,7 @@ namespace DotNetNuke.UI.ControlPanels
 
             if (ControlPanel.Visible && IncludeInControlHierarchy)
             {
-                ClientResourceManager.RegisterStyleSheet(Page, "~/admin/ControlPanel/ControlBar.css");
+                ClientResourceManager.RegisterStyleSheet(Page, "~/admin/ControlPanel/ControlBar.css", FileOrder.Css.ResourceCss);
                 JavaScript.RequestRegistration(CommonJs.DnnPlugins);
                 ClientResourceManager.RegisterScript(Page, "~/resources/shared/scripts/dnn.controlBar.js");
 
@@ -816,7 +811,7 @@ namespace DotNetNuke.UI.ControlPanels
                 PageList.Services.SortTreeMethod = "ItemListService/SortPagesInPortalGroup";
             }
 
-            PageList.UndefinedItem = new ListItem(SharedConstants.Unspecified, string.Empty);
+            PageList.UndefinedItem = new ListItem(DynamicSharedConstants.Unspecified, string.Empty);
             PageList.OnClientSelectionChanged.Add("dnn.controlBar.ControlBar_Module_PageList_Changed");
             return multipleSites;
         }
